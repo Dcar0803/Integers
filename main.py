@@ -27,6 +27,8 @@ def random_int(num):
         float: The processed number after applying the rules.
     """
 
+    num = num or random.randint(1,100)
+
     if num > 4: 
         raise ValueError("Number shouldn't be greater than 4")
     
