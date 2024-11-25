@@ -16,3 +16,16 @@ def square_root(number):
         raise ValueError("Cannot calculate the square root of a negative number")
     return math.sqrt(number)
 
+def random_int(num):
+
+    if num > 4: 
+        raise ValueError("Number shouldn't be greater than 4")
+    
+    if num % 2 == 1:
+        num *=2
+    if num % 3 == 0: 
+        num /= 3
+    if num % 4 == 0:
+        num *= 4
+
+    return num
