@@ -42,6 +42,18 @@ def random_int(num):
     return num
 
 def divisible_by_input(n):
+
+    """Returns a list of integers between 1 and 10 (inclusive) that are divisible by the given input number.
+
+    Args: 
+        n(int): The divisor.
+
+    Raises:
+        ValueError: if n is zero (division by zero is not allowed)
+
+    Returns:
+       list: A list of integers between 1 and 10 that are divisble
+    """
     if n == 0:
         raise ValueError("Division by zero is not allowed.")
     return [i for i in range(1, 11) if i % n == 0]
