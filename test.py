@@ -1,4 +1,5 @@
 import random
+from main import square_root
 
 def test_sqrt_with_check():
     assert sqrt_with_check(4) == 2.0, "Square root of 4 should be 2.0"
