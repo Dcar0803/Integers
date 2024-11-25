@@ -27,16 +27,18 @@ def random_int(num):
         float: The processed number after applying the rules.
     """
 
-    num = num or random.randint(1,100)
+    num = num or random.randint(1, 100)
 
-    if num > 4: 
+    if num > 4:
         raise ValueError("Number shouldn't be greater than 4")
-    
-    if num % 2 == 1:
-        num *=2
-    if num % 3 == 0: 
-        num /= 3
-    if num % 4 == 0:
+
+    if num % 2 == 1:  # Odd numbers
+        num *= 2
+
+    if num % 3 == 0:  # Divisible by 3
+        num //= 3
+
+    if num % 4 == 0:  # Divisible by 4
         num *= 4
 
     return num
