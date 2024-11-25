@@ -40,3 +40,8 @@ def random_int(num):
         num *= 4
 
     return num
+
+def divisible_by_input(n):
+    if n == 0:
+        raise ValueError("Division by zero is not allowed.")
+    return [i for i in range(1, 11) if i % n == 0]
