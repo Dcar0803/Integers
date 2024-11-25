@@ -13,25 +13,38 @@ def test_sqrt_with_check():
 
 
 def test_random_integer():
-
-    for i in range(10):
-        num = random.randint(1,100)
+    for _ in range(10):
+        num = random.randint(1, 100)
         
+        # Numbers greater than 4 should raise a ValueError
         if num > 4:
-           try:
-               random_int(num)
-               pass
-           except:
-               assert False, "Expected ValueError for number > 4"
+            try:
+                random_int(num)
+                assert False, "Expected ValueError for number > 4"
+            except ValueError:
+                pass  # Expected behavior
         
+        # Numbers 4 or less should follow the rules
         else:
             result = random_int(num)
+            
+            # Check for odd numbers
             if num % 2 == 1:
-                assert result == num * 2, "Odd numbers should be doubled"
-            if num % 3 == 0:
-                assert result == num // 3, "Numbers divisible by 3 should be divided by 3"
-            if num % 4 == 0:
-                assert result == num * 4, "Numbers divisible by 4 should be quadrupled"
+                assert result == num * 2, f"Odd number {num} should be doubled"
+            
+            # Check for numbers divisible by 3
+            elif num % 3 == 0:
+                assert result == num // 3, f"Number {num} divisible by 3 should be divided by 3"
+            
+            # Check for numbers divisible by 4
+            elif num % 4 == 0:
+                assert result == num * 4, f"Number {num} divisible by 4 should be quadrupled"
+            
+            # Check for even numbers not divisible by 3 or 4
+            elif num % 2 == 0 and num % 3 != 0 and num % 4 != 0:
+                assert result == num, f"Even number {num} not divisible by 3 or 4 should remain unchanged"
+
+            # Overlapping rules are handled by the first matching condition above
 
 def test_divisible_by_input():
     assert divisible_by_input(2) == [2, 4, 6, 8, 10], "Failed divisible by 2"
