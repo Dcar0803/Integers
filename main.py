@@ -18,6 +18,15 @@ def square_root(number):
 
 def random_int(num):
 
+    """ Processes the input number based on specific rules and returns the modified value.
+
+    Raises:
+        ValueError: if the number is greater than 4
+
+    Returns:
+        float: The processed number after applying the rules.
+    """
+
     if num > 4: 
         raise ValueError("Number shouldn't be greater than 4")
     
