@@ -20,6 +20,13 @@ def random_int(num):
 
     """ Processes the input number based on specific rules and returns the modified value.
 
+    Rules:
+        - Even numbers remain unchanged unless divisible by 3 or 4.
+        - Odd numbers are multiplied by 2.
+        - Numbers divisible by 3 are divided by 3.
+        - Numbers divisible by 4 are multiplied by 4.
+        - Numbers greater than 4 raise a ValueError.
+
     Raises:
         ValueError: if the number is greater than 4
 
