@@ -10,3 +10,25 @@ def test_sqrt_with_check():
         pass  # Expected exception
     else:
         assert False, "Expected ValueError for negative input"
+
+
+def test_random_integer():
+
+    for i in range(10):
+        num = random.randint(1,100)
+        
+        if num > 4:
+           try:
+               random_int(num)
+               pass
+           except:
+               assert False, "Expected ValueError for number > 4"
+        
+        else:
+            result = random_int(num)
+            if num % 2 == 1:
+                assert result == num * 2, "Odd numbers should be doubled"
+            if num % 3 == 0:
+                assert result == num // 3, "Numbers divisible by 3 should be divided by 3"
+            if num % 4 == 0:
+                assert result == num * 4, "Numbers divisible by 4 should be quadrupled"
