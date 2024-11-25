@@ -32,3 +32,14 @@ def test_random_integer():
                 assert result == num // 3, "Numbers divisible by 3 should be divided by 3"
             if num % 4 == 0:
                 assert result == num * 4, "Numbers divisible by 4 should be quadrupled"
+
+def test_divisible_by_input():
+    assert divisible_by_input(2) == [2, 4, 6, 8, 10], "Failed divisible by 2"
+    assert divisible_by_input(3) == [3, 6, 9], "Failed divisible by 3"
+    assert divisible_by_input(1) == list(range(1, 11)), "Failed divisible by 1"
+    try:
+        divisible_by_input(0)
+    except ValueError:
+        pass  # Expected exception
+    else:
+        assert False, "Expected ValueError for zero input"
